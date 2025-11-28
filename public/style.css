@@ -1,0 +1,251 @@
+/* ----------------------------------------------------
+   GLOBAL STYLES
+---------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fc;
+    color: #111;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ----------------------------------------------------
+   HEADER (component/header.html)
+---------------------------------------------------- */
+.header {
+    background: #0d6efd;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* ----------------------------------------------------
+   NAVBAR (component/navbar.html)
+---------------------------------------------------- */
+.navbar {
+    background: #0d6efd;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    opacity: 0.65;
+}
+
+/* ----------------------------------------------------
+   HAMBURGER MENU (MOBILE)
+---------------------------------------------------- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* When menu is open */
+#navLinks.open {
+    display: flex !important;
+}
+
+/* ----------------------------------------------------
+   HERO SECTION
+---------------------------------------------------- */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("/images/hero.jpg");
+
+    background-size: cover;
+    background-position: center center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-inner h1 {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.hero-inner p {
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+.btn {
+    margin-top: 16px;
+    background: #ffc107;
+    padding: 12px 22px;
+    border-radius: 6px;
+    display: inline-block;
+    color: black;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e0a800;
+}
+
+/* ----------------------------------------------------
+   PAGE SECTIONS
+---------------------------------------------------- */
+.page-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.page-section h2 {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+/* ----------------------------------------------------
+   SERVICES GRID
+---------------------------------------------------- */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* ----------------------------------------------------
+   FOOTER (component/footer.html)
+---------------------------------------------------- */
+.footer {
+    background: #0d6efd;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE DESIGN
+---------------------------------------------------- */
+
+/* MEDIUM SCREENS */
+@media (max-width: 900px) {
+    .service-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0d6efd;
+        width: 220px;
+
+        padding: 25px 20px;
+
+        flex-direction: column;
+        gap: 20px;
+
+        display: none;
+
+        border-radius: 0 0 0 15px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-inner h1 {
+        font-size: 34px;
+    }
+}
+
+/* SMALL SCREENS */
+@media (max-width: 600px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
